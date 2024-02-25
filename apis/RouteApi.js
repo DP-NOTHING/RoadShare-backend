@@ -9,7 +9,7 @@ module.exports = {
      * TODO: get this working - MapBox seems to be denying acccess
      */
     app.post("/api/mapBox", async (req, res, next) => {
-      // const coordinatest = [
+      // const coordinates = [
       //   { lat: -117.17282, long: 32.71204 },
       //   { lat: -117.17288, long: 32.71225 },
       //   { lat: -117.17293, long: 32.71244 },
@@ -35,8 +35,9 @@ module.exports = {
         console.log(coordinate_string);
 
         try {
+          console.log(coordinate_string);
           const resp = await axios.get(
-            `https://api.mapbox.com/matching/v5/mapbox/driving/${coordinate_string}?access_token=${process.env.mapbox_key}`,
+            `https://api.mapbox.com/matching/v5/mapbox/driving/${coordinate_string}?access_token=pk.eyJ1IjoidGFsaGFraHdqYTA2IiwiYSI6ImNsZGxmeHoyZDAxYnUzb3RjcWkwcTl6Y2kifQ.fILG1KajQ1DgZgYQwzG3xw`,
             {
               headers: {
                 accept: "application/json",
